@@ -1,0 +1,40 @@
+body {
+  display: grid;
+  grid-template-rows:
+    minmax(300px, max-content)
+    repeat(auto-fill, 300px);
+
+  grid-template-areas:
+    "library"
+    "input-area";
+}
+
+#library {
+  border: 1px solid black;
+  grid-area: "library";
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+#input-area {
+  border: 1px solid black;
+  grid-area: "input-area";
+  text-align: center;
+}
+
+.book-card {
+  display: inline-block;
+  height: 200px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  writing-mode: vertical-lr;
+}
+
+.book-card:hover {
+  writing-mode: horizontal-tb;
+}
+.description {
+  text-align: center;
+}
