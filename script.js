@@ -28,36 +28,14 @@ function createBook() {
         <h3 class='title'>${book.title}</h3>
         <h5 class='author'>by ${book.author}</h3>
     </div>
-    <div class='card-body' style="display: none">
+    <div class='card-body' >
         <p>${book.pages} pages</p>
         <p class 'read-status'>${book.read ? "Read" : "Not Read Yet"}</p>
-        <button class='remove-btn' onclick='deleteBook(${i})'>Remove</button>
+        <button class='remove-btn' onclick='deleteBook(${i})'>X</button>
         <button class='toggle-read-btn' onclick='toggleRead(${i})'>Completed?</button>
     </div>
 `;
-    bookContainer.onmouseover = () => {
-      bookContainer.innerHTML = `
-        <div class='card-header'>
-          <h3 class='title'>${book.title}</h3>
-          <h5 class='author'>by ${book.author}</h3>
-        </div>
-        <div class='card-body' >
-          <p>${book.pages} pages</p>
-          <p class 'read-status'>${book.read ? "Read" : "Not Read Yet"}</p>
-          <button class='remove-btn' onclick='deleteBook(${i})'>Remove</button>
-          <button class='toggle-read-btn' onclick='toggleRead(${i})'>Completed?</button>
-        </div>
-      `;
-      bookContainer.onmouseout = () => {
-        bookContainer.innerHTML = `
-        <div class='card-header'>
-          <h3 class='title'>${book.title}</h3>
-          <h5 class='author'>by ${book.author}</h3>
-        </div>`;
-      };
 
-      console.log(bookContainer.innerHTML);
-    };
     libraryContainer.appendChild(bookContainer);
   }
 }

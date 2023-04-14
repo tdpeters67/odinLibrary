@@ -1,8 +1,10 @@
 body {
+  padding: 100px;
+  background-image: url(https://images.pexels.com/photos/2128249/pexels-photo-2128249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1.png);
   display: grid;
   grid-template-rows:
-    minmax(300px, max-content)
-    repeat(auto-fill, 300px);
+    minmax(100px, min-content)
+    repeat(auto-fill, 200px);
 
   grid-template-areas:
     "library"
@@ -13,28 +15,68 @@ body {
   border: 1px solid black;
   grid-area: "library";
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(8, 10fr);
+  gap: 10px;
 }
 #input-area {
   border: 1px solid black;
   grid-area: "input-area";
   text-align: center;
+  background-color: brown;
+  padding: 0;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-card {
   display: inline-block;
-  height: 200px;
-  margin: 10px;
-  padding: 20px;
   border: 1px solid black;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
   writing-mode: vertical-lr;
+  background-color: brown;
 }
 
 .book-card:hover {
   writing-mode: horizontal-tb;
+  position: relative;
 }
 .description {
   text-align: center;
+}
+
+.card-body {
+  display: none;
+}
+.book-card:hover .card-body {
+  display: block;
+  color: black;
+}
+.card-header {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.book-card:hover .card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover .remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+  flex-direction: column-reverse;
+}
+
+.new-book-form {
+  flex-direction: column;
 }
